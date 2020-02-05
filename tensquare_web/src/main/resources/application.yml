@@ -1,0 +1,26 @@
+server:
+  port: 9015
+spring:
+  application:
+    name: tensquare-web  #前端网关
+eureka:
+  client:
+    service‐url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer‐ip‐address: true
+zuul:
+  routes:
+    tensquare-user:  #用户模块
+      path: /user/**  #请求url
+      serviceId: tensquare-user  #服务id
+    tensquare-friend:  #交友模块
+      path: /friend/**  #请求url
+      serviceId: tensquare-friend  #服务id
+    tensquare-base:  #基础模块
+      path: /base/**  #请求url
+      serviceId: tensquare-base  #服务id
+    tensquare-qa:  #问答模块
+      path: /qa/**  #请求url
+      serviceId: tensquare-qa  #服务id
+  sensitive-headers: #清空敏感请求头，表示不过滤任何请求头内容

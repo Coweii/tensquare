@@ -1,0 +1,5 @@
+#忽略鉴权URL
+ignored:
+  urls:
+    /test/**
+    /free/**

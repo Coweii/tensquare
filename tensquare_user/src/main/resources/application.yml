@@ -1,0 +1,40 @@
+server: 
+  port: 9008
+spring: 
+  application:  
+    name: tensquare-user #指定服务名
+  datasource:  
+    driverClassName: com.mysql.cj.jdbc.Driver  #com.mysql.jdbc.Driver
+    url: jdbc:mysql:///tensquare_user?serverTimezone=UTC #jdbc:mysql://cdb-4ghbgdie.cd.tencentcdb.com:10064/tensquare_user
+    username: root
+    password: 7684 #Coweii123@
+  jpa: 
+    database: MySQL
+    show-sql: true
+  redis:
+    host: 192.168.1.133
+  rabbitmq:
+    host: 192.168.1.133
+
+#阿里云短信服务
+aliyun:
+  sms:
+    accessKeyId: LTAI4FfDcVeBAKLVKQ5R7FYa      #阿里云访问许可
+    accessKeySecret: MGpkvRhepLxN0kxbv2ex2CiMGFiGvB  #阿里云访问许
+    signName: coweiijdk     #阿里云签名
+    templateCode: SMS_182676070   #阿里云短信模板
+
+#jwt设置
+jwt-config:
+  key: Coweii123@
+  ttl: 86400000  #有效时间, 1000*60*60*24
+  issuer: Lin
+
+#eureka客户端，注册服务
+eureka:
+  client:
+    service‐url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer‐ip‐address: true
+

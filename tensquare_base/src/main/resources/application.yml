@@ -1,0 +1,20 @@
+server:
+  port: 9102
+spring:
+  application:
+    name: tensquare-base
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver
+    url: jdbc:mysql:///tensquare_base?serverTimezone=UTC #jdbc:mysql://cdb-4ghbgdie.cd.tencentcdb.com:10064/tensquare_base
+    username: root
+    password: 7684
+  jpa:
+    database: MySQL
+    show-sql: true
+    generate-ddl: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka
+    instance:
+      prefer-ip-address: true

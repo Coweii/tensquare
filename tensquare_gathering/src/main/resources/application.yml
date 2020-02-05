@@ -1,0 +1,17 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: tensquare-gathering #指定服务名
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-4ghbgdie.cd.tencentcdb.com:10064/tensquare_gathering
+    username: root
+    password: Coweii123@
+  jpa:
+    database: MySQL
+    show-sql: true
+  cache:
+    redis:
+      time-to-live: 1800s
+      key-prefix: gathering_

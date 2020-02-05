@@ -1,0 +1,30 @@
+server:
+  port: 9016
+spring:
+  application:
+    name: tensquare-manager  #后台网关
+eureka:
+  client:
+    service‐url:
+      defaultZone: http://localhost:6868/eureka
+  instance:
+    prefer‐ip‐address: true
+zuul:
+  routes:
+    tensquare-user:  #用户模块
+      path: /user/**  #请求url
+      serviceId: tensquare-user  #服务id
+    tensquare-friend:  #交友模块
+      path: /friend/**  #请求url
+      serviceId: tensquare-friend  #服务id
+    tensquare-base:  #基础模块
+      path: /base/**  #请求url
+      serviceId: tensquare-base  #服务id
+    tensquare-qa:  #问答模块
+      path: /qa/**  #请求url
+      serviceId: tensquare-qa  #服务id
+  sensitive-headers:  # 不过滤任何请求头
+jwt-config:
+  key: Coweii123@
+  ttl: 86400000  #有效时间, 1000*60*60*24
+  issuer: Lin

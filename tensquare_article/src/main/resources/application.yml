@@ -1,0 +1,17 @@
+server: 
+  port: 9004
+spring: 
+  application:  
+    name: tensquare-article #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///tensquare_user #jdbc:mysql://cdb-4ghbgdie.cd.tencentcdb.com:10064/tensquare_article
+    username: root
+    password: 7684 #Coweii123@
+  jpa: 
+    database: MySQL
+    show-sql: true
+  cache:
+    redis:
+      time-to-live: 1800s
+      key-prefix: article_
